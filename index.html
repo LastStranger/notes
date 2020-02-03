@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nothing at all
+<div class="dd">click</div>
+<script>
+    const el = document.getElementsByClassName('dd')[0];
+    el.addEventListener('click', () => {
+        el.style.transform = "translateX(1000px)";
+        el.style.transition = "transform 1s ease-in-out";
+        // new Promise((resolve, reject) =>{resolve();}).then(() => {
+        //     console.log('222');
+        //     el.style.transform = "translateX(500px)";
+        // })
+        requestAnimationFrame(() => {
+            console.log('ww');
+            requestAnimationFrame(() => {
+                console.log('ss');
+                el.style.transform = "translateX(500px)";
+            });
+        });
+        console.log('qwe')
+    })
+    // function demo() {
+    //     while (true){
+    //
+    //     }
+    // };
+</script>
+</body>
+</html>
